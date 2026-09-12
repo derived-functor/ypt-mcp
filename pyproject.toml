@@ -1,0 +1,20 @@
+[project]
+name = "ypt-mcp"
+version = "0.1.0"
+description = "MCP server for the YPT (열품타) study-time tracker"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "mcp>=1.0",
+    "ypt-python",
+]
+
+[project.scripts]
+ypt-mcp = "ypt_mcp.server:main"
+
+[build-system]
+requires = ["uv_build>=0.12.10,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.uv.sources]
+ypt-python = { git = "https://github.com/derived-functor/ypt-private-client" }
